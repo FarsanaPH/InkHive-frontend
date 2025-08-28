@@ -14,7 +14,7 @@ This project simulates a **real-world online bookstore**, demonstrating proficie
 - API integration with **Express + MongoDB**  
 - Responsive and mobile-first design 
 
-## 🚀 Features
+## Features
 - **User Registration and Authentication**  
 - **Browse, Search & Filter Books** 
 - **Buy and Sell Books** seamlessly 

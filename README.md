@@ -1,7 +1,7 @@
 # InkHive BookStore
 
 **InkHive** is a modern **bookstore platform** where users can **buy and sell books**, while admins can **manage inventory and users**. Built using the **MERN stack**, this project focuses on responsive design, smooth user experience, and robust functionality.
-The project uses **Redux** for state management, and **Tailwind CSS** for a clean, responsive UI.
+The project uses **Redux** for state management, and **Tailwind CSS and Material UI** for a clean, responsive UI.
 
 ---
 
@@ -26,7 +26,7 @@ This project simulates a **real-world online bookstore**, demonstrating proficie
 ## Tech Stack
 
 - **React** – Component-based UI  
-- **Tailwind CSS** – Layout, styling & responsiveness  
+- **Tailwind CSS and Material UI** – Layout, styling & responsiveness  
 - **Redux Toolkit** – State management  
 - **JavaScript (ES6+)** – Core logic  
 - **Node.js & Express** – Backend runtime & REST API  

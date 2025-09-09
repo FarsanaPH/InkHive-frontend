@@ -10,6 +10,10 @@ import Profile from './user/pages/Profile'
 import ViewBook from './user/pages/ViewBook'
 import Preloader from './common/components/Preloader'
 import { useEffect, useState } from 'react'
+import AdminHome from './admin/pages/AdminHome'
+import AdminBooks from './admin/pages/AdminBooks'
+import AdminSettings from './admin/pages/AdminSettings'
+import AdminCareers from './admin/pages/AdminCareers'
 function App() {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -37,6 +41,10 @@ function App() {
 
 
         {/* admin side pages path */}
+        <Route path="/admin-home" element={<AdminHome/>} />
+        <Route path="/admin-books" element={<AdminBooks/>} />
+        <Route path="/admin-careers" element={<AdminCareers/>} />
+        <Route path="/admin-settings" element={<AdminSettings/>} />
       </Routes>
     </>
   )

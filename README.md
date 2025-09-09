@@ -1,12 +1,37 @@
-# React + Vite
+# InkHive BookStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**InkHive** is a modern **bookstore platform** where users can **buy and sell books**, while admins can **manage inventory and users**. Built using the **MERN stack**, this project focuses on responsive design, smooth user experience, and robust functionality.
+The project uses **Redux** for state management, and **Tailwind CSS and Material UI** for a clean, responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Purpose
 
-## Expanding the ESLint configuration
+This project simulates a **real-world online bookstore**, demonstrating proficiency in:  
+- Full-stack development with **MERN**  
+- Component-based UI design and reusability  
+- State management using **Redux Toolkit**  
+- API integration with **Express + MongoDB**  
+- Responsive and mobile-first design 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+- **User Registration and Authentication**  
+- **Browse, Search & Filter Books** 
+- **Buy and Sell Books** seamlessly 
+- **Admin Panel** for managing users and inventory  
+- **Responsive UI** for desktop and mobile   
+- **Smooth Animations & Interactions** 
+
+
+## Tech Stack
+
+- **React** – Component-based UI  
+- **Tailwind CSS and Material UI** – Layout, styling & responsiveness  
+- **Redux Toolkit** – State management  
+- **JavaScript (ES6+)** – Core logic  
+- **Node.js & Express** – Backend runtime & REST API  
+- **MongoDB** – Database storage   
+- **Vite** – Fast development build tool
+
+---
+> “InkHive helps you find and manage your favorite books with ease.” — Thanks for visiting the project! 😊

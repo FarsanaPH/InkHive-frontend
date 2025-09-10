@@ -15,7 +15,7 @@ function Profile() {
       <Header />
       <div className="bg-gray-900 h-[200px]"></div>
 
-      <div className="w-[230px] h-[230px]  rounded-full mt-[-130px] ml-[70px]">
+      <div className="w-[230px] h-[210px]  rounded-full mt-[-130px] ml-[70px]">
         <IoPersonCircleSharp
           className="text-gray-300  bg-white w-[200px] h-[200px] rounded-full"
         />
@@ -27,10 +27,10 @@ function Profile() {
         </div>
         <EditProfile />
       </div>
-      <p className='text-justify md:px-20 px-10 my-5 text-lg'>Hey...I am a book store user!!!</p>
+      <p className='text-justify md:px-20 px-10  text-lg'>Hey...I am a book store user!!!</p>
 
       {/* tabs */}
-      <div className="flex justify-center cursor-pointer items-center text-xl my-10">
+      <div className="flex ml-143 cursor-pointer items-center text-xl my-6">
         <h1 onClick={() => { setSellStatus(true); setBookStatus(false); setPurchaseStatus(false) }}
           className={sellStatus ? `px-4 py-3 text-blue-400 text-shadow-2xs border-gray-300 border-l border-r border-t rounded` :
             `px-4 py-3 border-b border-gray-300`}>
@@ -68,8 +68,9 @@ function Profile() {
                 <input type="text" placeholder="Language" className="p-2 bg-white rounded" />
                 <input type="text" placeholder="ISBN" className="p-2 bg-white rounded" />
                 <input type="text" placeholder="Category" className="p-2 bg-white rounded" />
-                <div className="flex justify-center items-center mt-5 flex-col">
 
+                <div className="flex justify-center items-center mt-5 flex-col">
+                  {/* upload img */}
                   <label htmlFor="uploadBookimg">
                     <input id="uploadBookimg" type="file" className='hidden' alt="no image" />
                     <img src="https://cdn.pixabay.com/photo/2016/01/03/00/43/upload-1118929_1280.png" alt="upload img" className='h-[200px] w-[200px]' />
@@ -77,39 +78,18 @@ function Profile() {
 
                   <div className="mt-10 flex items-center gap-4">
                     {/* First icon */}
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/1828/1828778.png"
-                      alt="icon1"
-                      style={{ width: "50px", height: "50px" }}
-                    />
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828778.png" alt="icon1" className='h-[50px] w-[50px]' />
 
                     {/* Second icon */}
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png"
-                      alt="icon2"
-                      style={{ width: "50px", height: "50px" }}
-                    />
+                    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="icon2" className='h-[50px] w-[50px]' />
 
                     {/* Third icon */}
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
-                      alt="icon3"
-                      style={{ width: "50px", height: "50px" }}
-                    />
+                    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="icon3" className='h-[50px] w-[50px]' />
 
                     {/* Upload Placeholder */}
                     <label htmlFor="uploadBookImg">
-                      <input
-                        id="uploadBookImg"
-                        type="file"
-                        style={{ display: "none" }}
-                        alt="no image"
-                      />
-                      <img
-                        src="https://cdn-icons-png.flaticon.com/512/1829/1829350.png"
-                        alt="upload placeholder"
-                        style={{ width: "50px", height: "50px", cursor: "pointer" }}
-                      />
+                      <input id="uploadBookImg" type="file" className='hidden' alt="no image" />
+                      <img src="https://cdn-icons-png.flaticon.com/512/1829/1829350.png" alt="upload placeholder" className='w-[50px] h-[50px] cursor-pointer' />
                     </label>
                   </div>
                 </div>
@@ -126,15 +106,69 @@ function Profile() {
       )}
 
       {
-        bookStatus && <div className="p-10">
-          <p>Book Status</p>
-        </div>
+        bookStatus &&
+        <>
+          <h2 className="text-2xl font-semibold  text-center">My Book Status</h2>
+          <div className="p-8 flex justify-center">
+
+            <div className="w-full md:w-[80%]  mb-6 rounded">
+              <div className="flex justify-between bg-gray-100 p-5 shadow rounded-lg mb-4">
+                <div className="w-[70%]">
+                  <h2 className="text-xl font-semibold">Title</h2>
+                  <p className="text-gray-600">Author</p>
+                  <p className="text-blue-600 font-medium cursor-pointer">$ 600</p>
+                  <p className="text-gray-700 mt-2">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui odit
+                    doloribus neque quae inventore recusandae eum quia quaerat saepe,
+                    consequatur labore incidunt voluptates veritatis nihil, explicabo
+                    minus dolores nobis ullam?
+                  </p>
+
+                  {/* Status Badges */}
+                  <div className="flex items-center gap-3 mt-3">
+                    <img
+                      src="https://img.icons8.com/color/48/pending--v1.png"
+                      alt="Pending"
+                      className="w-12 h-12"
+                    />
+                    <img
+                      src="https://img.icons8.com/color/48/approval--v1.png"
+                      alt="Approved"
+                      className="w-12 h-12"
+                    />
+                    <img
+                      src="https://img.icons8.com/color/48/sold.png"
+                      alt="Sold"
+                      className="w-12 h-12"
+                    />
+                  </div>
+
+                  {/* Delete Button */}
+                  <button className="bg-red-600 text-white px-4 py-2 mt-4 rounded hover:bg-red-700">
+                    Delete
+                  </button>
+                </div>
+
+                {/* Right Section - Book Image */}
+                <div className="w-40 h-56">
+                  <img
+                    src="https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg"
+                    alt="Book"
+                    className="w-full h-full object-cover rounded"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       }
       {
         purchaseStatus && (
+          <>
+          <h2 className="text-2xl font-semibold  text-center">My Purchase History</h2>
           <div className="p-8 flex justify-center">
-            <div className="w-full md:w-[80%] border border-gray-300 shadow p-8 rounded">
-              
+            <div className="w-full md:w-[80%] border border-gray-200 shadow p-8 rounded">
+
 
               {/* Book 1 */}
               <div className="flex justify-between bg-gray-100 p-5 rounded-lg mb-4">
@@ -172,6 +206,7 @@ function Profile() {
               </div>
             </div>
           </div>
+          </>
         )
       }
 

@@ -3,7 +3,7 @@ import React from 'react'
 function AdminHeader() {
     return (
         <>
-            <nav className="px-3 flex items-center">
+            <nav className="px-3 bg-amber-300 flex items-center">
                 <div className='flex items-center'>
                     <img src="https://openclipart.org/image/800px/275692" alt="" style={{ width: "60px", height: "60px" }} />
                     <h1 className='text-2xl font-bold'>BOOK STORE</h1>

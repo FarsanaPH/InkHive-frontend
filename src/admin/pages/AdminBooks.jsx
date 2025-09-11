@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AdminSidebar from '../components/AdminSidebar'
 import AdminHeader from '../components/AdminHeader'
+import { ImCancelCircle } from 'react-icons/im'
 
 function AdminBooks() {
   const [booklistStatus, setBooklistStatus] = useState(true)
@@ -19,11 +20,11 @@ function AdminBooks() {
             <button onClick={() => { setBooklistStatus(true); setUserlistStatus(false) }}
               className={booklistStatus ? `px-4 py-3 text-blue-400 text-shadow-2xs border-gray-300 border-l border-r border-t rounded` :
                 `px-4 py-3 border-b border-gray-300`}>
-              Book Lists</button>
+              Book List</button>
             <button onClick={() => { setUserlistStatus(true); setBooklistStatus(false) }}
               className={userlistStatus ? `px-4 py-3 text-blue-400 text-shadow-2xs border-gray-300 border-l border-r border-t rounded` :
                 `px-4 py-3 border-b border-gray-300`}
-            >User Lists</button>
+            >User List</button>
           </div>
 
           {booklistStatus &&
@@ -41,7 +42,6 @@ function AdminBooks() {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           }

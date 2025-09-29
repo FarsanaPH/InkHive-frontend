@@ -9,8 +9,31 @@ function Profile() {
   const [bookStatus, setBookStatus] = useState(false)
   const [purchaseStatus, setPurchaseStatus] = useState(false)
 
-  return (
+  const [bookDetails, setBookDetails] = useState({
+    title: "",
+    author: "",
+    publisher: "",
+    language: "",
+    noofpages: "",
+    isbn: "",
+    imgUrl: "",
+    category: "",
+    price: "",
+    dPrice: "",
+    abstract: "",
+    uploadImages: []
+  })
+  console.log(bookDetails);
 
+  const handleUpload = (e) => {
+    console.log(e.target.files);
+    const fileArray = bookDetails.uploadImages
+    fileArray.push(e.target.files[0])
+    setBookDetails({...bookDetails, uploadImages: fileArray})   
+  }
+
+
+  return (
     <>
       <Header />
       <div className="bg-gray-900 h-[200px]"></div>
@@ -53,26 +76,26 @@ function Profile() {
             <form className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {/* Left column */}
               <div className="flex flex-col gap-3">
-                <input type="text" placeholder="Title" className="p-2 bg-white rounded" />
-                <input type="text" placeholder="Author" className="p-2 bg-white rounded" />
-                <input type="number" placeholder="No of Pages" className="p-2 bg-white rounded" />
-                <input type="text" placeholder="Image Url" className="p-2 bg-white rounded" />
-                <input type="number" placeholder="Price" className="p-2 bg-white rounded" />
-                <input type="number" placeholder="Discount Price" className="p-2 bg-white rounded" />
-                <textarea placeholder="Abstract" rows="4" className="p-2 bg-white rounded"></textarea>
+                <input value={bookDetails.title} onChange={(e) => { setBookDetails({ ...bookDetails, title: e.target.value }) }} type="text" placeholder="Title" className="p-2 bg-white rounded" />
+                <input value={bookDetails.author} onChange={(e) => { setBookDetails({ ...bookDetails, author: e.target.value }) }} type="text" placeholder="Author" className="p-2 bg-white rounded" />
+                <input value={bookDetails.noofpages} onChange={(e) => { setBookDetails({ ...bookDetails, noofpages: e.target.value }) }} type="number" placeholder="No of Pages" className="p-2 bg-white rounded" />
+                <input value={bookDetails.imgUrl} onChange={(e) => { setBookDetails({ ...bookDetails, imgUrl: e.target.value }) }} type="text" placeholder="Image Url" className="p-2 bg-white rounded" />
+                <input value={bookDetails.price} onChange={(e) => { setBookDetails({ ...bookDetails, price: e.target.value }) }} type="number" placeholder="Price" className="p-2 bg-white rounded" />
+                <input value={bookDetails.dPrice} onChange={(e) => { setBookDetails({ ...bookDetails, dPrice: e.target.value }) }} type="number" placeholder="Discount Price" className="p-2 bg-white rounded" />
+                <textarea value={bookDetails.abstract} onChange={(e) => { setBookDetails({ ...bookDetails, abstract: e.target.value }) }} placeholder="Abstract" rows="4" className="p-2 bg-white rounded"></textarea>
               </div>
 
               {/* Right column */}
               <div className="flex flex-col gap-3">
-                <input type="text" placeholder="Publisher" className="p-2 bg-white rounded" />
-                <input type="text" placeholder="Language" className="p-2 bg-white rounded" />
-                <input type="text" placeholder="ISBN" className="p-2 bg-white rounded" />
-                <input type="text" placeholder="Category" className="p-2 bg-white rounded" />
+                <input value={bookDetails.publisher} onChange={(e) => { setBookDetails({ ...bookDetails, publisher: e.target.value }) }} type="text" placeholder="Publisher" className="p-2 bg-white rounded" />
+                <input value={bookDetails.language} onChange={(e) => { setBookDetails({ ...bookDetails, language: e.target.value }) }} type="text" placeholder="Language" className="p-2 bg-white rounded" />
+                <input value={bookDetails.isbn} onChange={(e) => { setBookDetails({ ...bookDetails, isbn: e.target.value }) }} type="text" placeholder="ISBN" className="p-2 bg-white rounded" />
+                <input value={bookDetails.category} onChange={(e) => { setBookDetails({ ...bookDetails, category: e.target.value }) }} type="text" placeholder="Category" className="p-2 bg-white rounded" />
 
                 <div className="flex justify-center items-center mt-5 flex-col">
                   {/* upload img */}
                   <label htmlFor="uploadBookimg">
-                    <input id="uploadBookimg" type="file" className='hidden' alt="no image" />
+                    <input onChange={(e) => { handleUpload(e) }} id="uploadBookimg" type="file" className='hidden' alt="no image" />
                     <img src="https://cdn.pixabay.com/photo/2016/01/03/00/43/upload-1118929_1280.png" alt="upload img" className='h-[200px] w-[200px]' />
                   </label>
 
@@ -165,47 +188,47 @@ function Profile() {
       {
         purchaseStatus && (
           <>
-          <h2 className="text-2xl font-semibold  text-center">My Purchase History</h2>
-          <div className="p-8 flex justify-center">
-            <div className="w-full md:w-[80%] border border-gray-200 shadow p-8 rounded">
+            <h2 className="text-2xl font-semibold  text-center">My Purchase History</h2>
+            <div className="p-8 flex justify-center">
+              <div className="w-full md:w-[80%] border border-gray-200 shadow p-8 rounded">
 
 
-              {/* Book 1 */}
-              <div className="flex justify-between bg-gray-100 p-5 rounded-lg mb-4">
-                <div className="w-[70%]">
-                  <h3 className="text-xl font-bold">Ikigai: The Japanese Secret to a Long and Happy Life</h3>
-                  <p className="text-gray-600">Héctor García & Francesc Miralles</p>
-                  <p className="text-blue-500 font-semibold my-2">$200</p>
-                  <p className="text-gray-700">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the industry's standard dummy text ever since the 1500s...
-                  </p>
+                {/* Book 1 */}
+                <div className="flex justify-between bg-gray-100 p-5 rounded-lg mb-4">
+                  <div className="w-[70%]">
+                    <h3 className="text-xl font-bold">Ikigai: The Japanese Secret to a Long and Happy Life</h3>
+                    <p className="text-gray-600">Héctor García & Francesc Miralles</p>
+                    <p className="text-blue-500 font-semibold my-2">$200</p>
+                    <p className="text-gray-700">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                      the industry's standard dummy text ever since the 1500s...
+                    </p>
+                  </div>
+                  <img
+                    src="https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg"
+                    alt="Ikigai"
+                    className="w-[120px] h-[160px] object-cover rounded"
+                  />
                 </div>
-                <img
-                  src="https://m.media-amazon.com/images/I/81l3rZK4lnL.jpg"
-                  alt="Ikigai"
-                  className="w-[120px] h-[160px] object-cover rounded"
-                />
-              </div>
 
-              {/* Book 2 */}
-              <div className="flex justify-between bg-gray-100 p-5 rounded-lg mb-4">
-                <div className="w-[70%]">
-                  <h3 className="text-xl font-bold">The Da Vinci Code</h3>
-                  <p className="text-gray-600">Dan Brown</p>
-                  <p className="text-blue-500 font-semibold my-2">$13</p>
-                  <p className="text-gray-700">
-                    Another dummy text about the book goes here, with description and details for purchase history.
-                  </p>
+                {/* Book 2 */}
+                <div className="flex justify-between bg-gray-100 p-5 rounded-lg mb-4">
+                  <div className="w-[70%]">
+                    <h3 className="text-xl font-bold">The Da Vinci Code</h3>
+                    <p className="text-gray-600">Dan Brown</p>
+                    <p className="text-blue-500 font-semibold my-2">$13</p>
+                    <p className="text-gray-700">
+                      Another dummy text about the book goes here, with description and details for purchase history.
+                    </p>
+                  </div>
+                  <img
+                    src="https://m.media-amazon.com/images/I/51oXKWrcYYL._SX331_BO1,204,203,200_.jpg"
+                    alt="Da Vinci Code"
+                    className="w-[120px] h-[160px] object-cover rounded"
+                  />
                 </div>
-                <img
-                  src="https://m.media-amazon.com/images/I/51oXKWrcYYL._SX331_BO1,204,203,200_.jpg"
-                  alt="Da Vinci Code"
-                  className="w-[120px] h-[160px] object-cover rounded"
-                />
               </div>
             </div>
-          </div>
           </>
         )
       }

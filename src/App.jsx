@@ -14,6 +14,7 @@ import AdminHome from './admin/pages/AdminHome'
 import AdminBooks from './admin/pages/AdminBooks'
 import AdminSettings from './admin/pages/AdminSettings'
 import AdminCareers from './admin/pages/AdminCareers'
+import { ToastContainer } from 'react-toastify'
 function App() {
   const [isLoading, setIsLoading] = useState(true)
 
@@ -46,6 +47,8 @@ function App() {
         <Route path="/admin-careers" element={<AdminCareers/>} />
         <Route path="/admin-settings" element={<AdminSettings/>} />
       </Routes>
+
+      <ToastContainer position="bottom-right" autoClose={3000} theme='colored'/>
     </>
   )
 }
